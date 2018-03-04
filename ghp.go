@@ -51,7 +51,11 @@ func (g *GHP) run() error {
 	if err := os.MkdirAll(path, 0755); err != nil {
 		return err
 	}
-	return runGitInit(path)
+	if err := runGitInit(path); err != nil {
+		return err
+	}
+	fmt.Println(path)
+	return nil
 }
 
 func (g *GHP) checkGhqRoot() {
