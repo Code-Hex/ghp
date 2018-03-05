@@ -14,15 +14,18 @@ import (
 
 const github = "github.com"
 
+// GHP struct
 type GHP struct {
 	Username string
 	GhqRoot  string
 }
 
+// New returns GHP struct pointer
 func New() *GHP {
 	return new(GHP)
 }
 
+// Run method will create a project and returns exit code
 func (g *GHP) Run() int {
 	if err := g.run(); err != nil {
 		fmt.Fprintf(os.Stderr, "Error: %v", err)
