@@ -82,7 +82,7 @@ func (g *GHP) run() error {
 		return errors.New(err.Error())
 	}
 	if err := runGitInit(g.Dest); err != nil {
-		return err
+		return errors.Wrap(err, "Failed to run git init")
 	}
 	if g.Options.WithLicense {
 		choose := ui.Choose("Which license do you want to use? (number)", []string{
