@@ -20,7 +20,8 @@ const (
 type Options struct {
 	Help bool `short:"h" long:"help" description:"show this message"`
 
-	StackTrace bool `long:"trace" description:"display detail error messages"`
+	WithLicense bool `long:"with-license" description:"create project with a license"`
+	StackTrace  bool `long:"trace" description:"display detail error messages"`
 }
 
 func (opts *Options) parse(argv []string) ([]string, error) {
