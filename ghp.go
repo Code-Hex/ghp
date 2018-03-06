@@ -95,7 +95,7 @@ func (g *GHP) run() error {
 			"GNU Lesser General Public License v3.0",
 		}, "MIT License")
 		t := template.New("init license")
-		if err := g.GenerateLICENSE(t, choose); err != nil {
+		if err := g.generateLICENSE(t, choose); err != nil {
 			return errors.Wrapf(err, "Failed to create %s", choose)
 		}
 	}
@@ -116,7 +116,7 @@ func (g *GHP) getDestination() error {
 	return nil
 }
 
-func (g *GHP) GenerateLICENSE(t *template.Template, kind string) error {
+func (g *GHP) generateLICENSE(t *template.Template, kind string) error {
 	if err := os.Chdir(g.Dest); err != nil {
 		return err
 	}
