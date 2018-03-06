@@ -128,7 +128,7 @@ func ghqRoot() string {
 }
 
 func (g *GHP) registerGitConfig() error {
-	cmd := exec.Command("git", "config", "github.user", fmt.Sprintf(`"%s"`, g.Username))
+	cmd := exec.Command("git", "config", "--global", "github.user", g.Username)
 	return cmd.Run()
 }
 
