@@ -23,10 +23,14 @@ var (
 	stderr = colorable.NewColorableStderr()
 )
 
+// Printf formats according to a format specifier and writes to colorable stdout(green color)
+// It returns the number of bytes written and any write error encountered.
 func Printf(format string, args ...interface{}) {
 	fmt.Fprintf(stdout, color(green, format), args...)
 }
 
+// Errorf formats according to a format specifier and writes to colorable stdout(red color)
+// It returns the number of bytes written and any write error encountered.
 func Errorf(format string, args ...interface{}) {
 	fmt.Fprintf(stderr, color(red, format), args...)
 }
